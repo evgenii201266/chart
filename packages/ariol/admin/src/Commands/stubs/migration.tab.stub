@@ -1,0 +1,31 @@
+<?php
+
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Migrations\Migration;
+
+class TableClass extends Migration
+{
+    /**
+     * Запуск миграции.
+     *
+     * @return void
+     */
+    public function up()
+    {
+        Schema::create('TableName', function (Blueprint $table) {
+            $table->string('group', 30)->nullable();
+            $table->string('key', 40)->nullable();
+            $table->text('value')->nullable();
+        });
+    }
+
+    /**
+     * Откат миграции.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::dropIfExists('TableName');
+    }
+}

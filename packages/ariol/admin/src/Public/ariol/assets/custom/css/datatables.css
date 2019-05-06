@@ -1,0 +1,34 @@
+.checkbox-table {
+    margin-top: 8px;
+}
+
+table a {
+    color: #263238;
+}
+
+table a:hover {
+    color: #192226;
+}
+
+.table-responsive {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+@media screen and (max-width: 768px) {
+    .table-responsive {
+        border-top: 0;
+        border-bottom: 0;
+        border-left: 1px solid #ddd;
+        border-right: 1px solid #ddd;
+    }
+}
+
+.fileupload-progress.fade {
+    display: none;
+}
+
+.fileupload-progress.fade.in {
+    display: block;
+}

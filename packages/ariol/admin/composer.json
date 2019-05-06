@@ -1,0 +1,12 @@
+{
+    "name": "ariol/admin",
+    "description": "Admin zone",
+    "authors": [
+        {
+            "name": "Ariol Media",
+            "email": "we@ariol.by"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {}
+}

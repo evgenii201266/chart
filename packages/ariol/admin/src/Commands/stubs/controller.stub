@@ -1,0 +1,17 @@
+<?php namespace App\Http\Controllers\Admin;
+
+use Ariol\Admin\Controllers\BaseController;
+
+/**
+ * Class.
+ * @package App\Http\Controllers\Admin
+ */
+class NameController extends BaseController
+{
+    /**
+     * Используемая модель, которая находится в App/Http/Models.
+     *
+     * @var string
+     */
+    protected $model = 'ModelName';
+}

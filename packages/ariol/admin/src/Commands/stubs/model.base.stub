@@ -1,0 +1,82 @@
+<?php namespace App\Http\Models;
+
+use Illuminate\Database\Eloquent\Model;
+
+/**
+ * Модель ModelName.
+ *
+ * @package App\Http\Models
+ */
+class ModelName extends Model
+{
+    /**
+     * Используемая таблица.
+     *
+     * @var string
+     */
+    protected $table = 'TableName';
+
+    /**
+     * Разрешаем все поля для автозаполнения.
+     *
+     * @var array
+     */
+    protected $guarded = [];
+
+    /**
+     * В таблице используются timestamp'ы.
+     *
+     * @var bool
+     */
+    public $timestamps = true;
+
+    /**
+     * Данные полей, выводимых на странице.
+     *
+     * @var array
+     */
+    public $columns = [
+        'name' => [
+            'type' => 'editable'
+        ]
+    ];
+
+    /**
+     * Наименование полей.
+     *
+     * @return array
+     */
+    public function labels()
+    {
+        return [
+            'name' => 'Наименование'
+        ];
+    }
+
+    /**
+     * Описание типов полей.
+     *
+     * @return array
+     */
+    public function form()
+    {
+        return [
+            'name' => [
+                'type' => 'string',
+                'params' => [
+                  'required' => true
+                ]
+            ]
+        ];
+    }
+
+    /**
+     * Поля, по которым можно сортировать данные в таблице.
+     *
+     * @return array
+     */
+    public function sortableFields()
+    {
+        return ['name'];
+    }
+}

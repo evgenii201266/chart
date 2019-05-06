@@ -1,0 +1,147 @@
+/* Дополнение к Bootstrap 3. */
+@media (min-width: 992px) {
+    .col-md-offset-right-12 {
+        margin-right: 100%;
+    }
+
+    .col-md-offset-right-11 {
+        margin-right: 91.66666667%;
+    }
+
+    .col-md-offset-right-10 {
+        margin-right: 83.33333333%;
+    }
+
+    .col-md-offset-right-9 {
+        margin-right: 75%;
+    }
+
+    .col-md-offset-right-8 {
+        margin-right: 66.66666667%;
+    }
+
+    .col-md-offset-right-7 {
+        margin-right: 58.33333333%;
+    }
+
+    .col-md-offset-right-6 {
+        margin-right: 50%;
+    }
+
+    .col-md-offset-right-5 {
+        margin-right: 41.66666667%;
+    }
+
+    .col-md-offset-right-4 {
+        margin-right: 33.33333333%;
+    }
+
+    .col-md-offset-right-3 {
+        margin-right: 25%;
+    }
+
+    .col-md-offset-right-2 {
+        margin-right: 16.66666667%;
+    }
+
+    .col-md-offset-right-1 {
+        margin-right: 8.33333333%;
+    }
+
+    .col-md-offset-right-0 {
+        margin-right: 0;
+    }
+}
+/* Конец дополнения. */
+
+.fancybox img {
+    max-width: 80px;
+    max-height: 80px;
+}
+
+span.preview {
+    display: none;
+}
+
+table .bootstrap-switch {
+    margin-top: 0;
+    margin-right: 0;
+}
+
+.content-group-lg {
+    margin-bottom: 20px !important;
+}
+
+.sidebar-content {
+    padding: 0;
+}
+
+.navigation-main {
+    padding: 0;
+}
+
+.page-container {
+    padding-top: 0;
+}
+
+.category-content {
+    overflow-y: auto;
+}
+
+.content-wrapper {
+    padding-left: 0;
+}
+
+@media screen and (min-width: 769px) {
+    .content-wrapper {
+        padding-left: 260px;
+    }
+
+    .sidebar-xs .content-wrapper {
+        padding-left: 56px;
+    }
+
+    .page-container {
+        padding-top: 50px;
+    }
+
+    .sidebar-main {
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+    }
+
+    .sidebar-content {
+        position: absolute;
+        padding: 50px 0 0 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+    }
+
+    .sidebar-category {
+        position: relative;
+        height: calc(100% - 200px);
+    }
+
+    .category-content, .navigation-main {
+        position: relative;
+        height: 100%;
+    }
+}
+
+table div[contenteditable="true"] {
+    word-break: break-all;
+}
+
+.panel-dark > .panel-heading {
+    color: #fff;
+    background-color: #425964;
+    border-color: #425964;
+}
+
+.letter-spacing-none {
+    letter-spacing: 0;
+}

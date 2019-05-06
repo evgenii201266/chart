@@ -1,0 +1,37 @@
+form {
+    display: flex;
+    -webkit-justify-content: flex-start;
+    justify-content: flex-start;
+    -webkit-flex-wrap: wrap;
+}
+
+.form-group.buttons {
+    margin-top: 20px;
+    margin-bottom: 0;
+}
+
+.type_array {
+    margin-bottom: 10px;
+}
+
+.col-left {
+    margin-left: -10px;
+}
+
+.col-right {
+    padding-right: 0;
+    margin-left: 10px;
+}
+
+.map-wrapper {
+    height: 300px;
+}
+
+.picker {
+    top: -195px;
+    margin-top: 0;
+}
+
+.chart.has-minimum-width {
+    min-width: 100px;
+}

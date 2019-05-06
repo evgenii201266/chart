@@ -18,3 +18,11 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/', 'ChartController@index')->name('chart');
+
+Route::post('/parser', 'ParserController@index')->name('parser.index');
+Route::post('/send', 'SendController@send');
+Route::post('/search', 'SendController@search')->name('send.search');
+
+
+

@@ -1,0 +1,89 @@
+<?php namespace App\Http\Models;
+
+use Illuminate\Database\Eloquent\Model;
+
+/**
+ * Модель ModelName.
+ * @package App\Http\Models
+ */
+class ModelName extends Model
+{
+    /**
+     * Используемая таблица.
+     *
+     * @var string
+     */
+    protected $table = 'TableName';
+
+    /**
+     * Разрешаем все поля для автозаполнения.
+     *
+     * @var array
+     */
+    protected $guarded = [];
+
+    /**
+     * В таблице не используются timestamp'ы.
+     *
+     * @var bool
+     */
+    public $timestamps = false;
+
+    /**
+     * Наименование полей.
+     *
+     * @return array
+     */
+    public function labels()
+    {
+        return [
+            'block_1' => [
+                'title' => 'Блок 1',
+                'content' => [
+                    'title' => 'Заголовок 1',
+                    'description' => 'Описание 1',
+                ]
+            ],
+            'block_2' => [
+                'title' => 'Блок 2',
+                'content' => [
+                    'title' => 'Заголовок 2',
+                    'description' => 'Описание 2',
+                ]
+            ]
+        ];
+    }
+
+    /**
+     * Описание типов полей.
+     *
+     * @return array
+     */
+    public function form()
+    {
+        return [
+            'block_1' => [
+                'title' => [
+                    'type' => 'string',
+                    'params' => [
+                        'require' => true
+                    ]
+                ],
+                'description' => [
+                    'type' => 'editor'
+                ]
+            ],
+            'block_2' => [
+                'title' => [
+                    'type' => 'string',
+                    'params' => [
+                        'require' => true
+                    ]
+                ],
+                'description' => [
+                    'type' => 'editor'
+                ]
+            ]
+        ];
+    }
+}
