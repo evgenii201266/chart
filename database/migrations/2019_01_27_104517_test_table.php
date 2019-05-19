@@ -21,7 +21,7 @@ class TestTable extends Migration
             $table->float('system_voltage', 8, 3)->nullable();
             $table->float('battery_voltage', 8, 3)->nullable();
             $table->timestamp('date')->nullable();
-            $table->timestamps();
+            $table->json('options')->nullable();	
         });
     }
 

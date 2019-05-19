@@ -1,12 +1,12 @@
 am4core.useTheme(am4themes_dark);
-am4core.useTheme(am4themes_animated);
 
 
 var main = function(response, chart){
   chartData = [];
-  for (var i = 0; i < response.date.length; i++) {
+  var countData = response.data.length;
+  for (var i = 0; i < countData; i++) {
 
-    var datemain = response.date[i].match(/[0-9]{2,4}/gm);
+    var datemain = response.data[i].date.match(/[0-9]{2,4}/gm);
 
     var year = datemain[0];
     var month = datemain[1]-1;
@@ -26,13 +26,13 @@ var main = function(response, chart){
 
       chartData.push({
         date:date,
-        pampTemp: response.pampTemp[i],
-        pampVoltage: response.pampVoltage[i],
-        systemVoltage: response.systemVoltage[i],
-        batteryVoltage: response.batteryVoltage[i]
+        pampTemp: response.data[i].pamp_temp,
+        pampVoltage: response.data[i].pamp_voltage,
+        systemVoltage: response.data[i].system_voltage,
+        batteryVoltage: response.data[i].battery_voltage
     });
   }
-  console.log(chartData)
+  // console.log(chartData)
 
   chart.data = chartData;
   // chart.numberFormatter.numberFormat = "#.###";
@@ -40,9 +40,7 @@ var main = function(response, chart){
   // Create axes
   var dateAxis = chart.xAxes.push(new am4charts.DateAxis());
  
-
-  dateAxis.tooltipDateFormat = "HH:mm::yyyy, d MMMM";
-
+  dateAxis.tooltipDateFormat = "yyyy, d MMMM";
 
   
   var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
@@ -56,14 +54,12 @@ var main = function(response, chart){
   // xAxis.dateFormatter = new am4core.DateFormatter();
   // xAxis.dateFormatter.dateFormat = "MM-dd";
 
-
-  
   // Create series
   var series1 = chart.series.push(new am4charts.LineSeries());
   series1.dataFields.valueY = "pampTemp";
   series1.dataFields.dateX = "date";
   series1.name = "Температура";
-  series1.tooltipText = "{pampTemp}";
+  series1.tooltipText = "{pampTemp} ℃";
   series1.tooltip.pointerOrientation = "vertical";
   
   var series2 = chart.series.push(new am4charts.LineSeries());
@@ -72,7 +68,7 @@ var main = function(response, chart){
   series2.name = "Напряжение";
   // series2.stroke = chart.colors.getIndex(6);
   series2.stroke = "green";
-  series2.tooltipText = "{pampVoltage}";
+  series2.tooltipText = "{pampVoltage} V";
   series2.tooltip.pointerOrientation = "vertical";
 
   var series3 = chart.series.push(new am4charts.LineSeries());
@@ -91,7 +87,7 @@ var main = function(response, chart){
   series4.name = "Напряжение батареи";
   // series2.stroke = chart.colors.getIndex(6);
   series4.stroke = "red";
-  series4.tooltipText = "{batteryVoltage}";
+  series4.tooltipText = "{batteryVoltage} V";
   series4.tooltip.pointerOrientation = "vertical";
 
   var bullet1 = series1.bullets.push(new am4charts.CircleBullet());
@@ -119,11 +115,10 @@ var main = function(response, chart){
   series4.tooltip.pointerOrientation = "vertical";
 
   chart.legend = new am4charts.Legend();
-  
 
-  
   chart.cursor = new am4charts.XYCursor();
-  
+  chart.cursor.lineY.strokeOpacity = 0;
+
   // chart.cursor.snapToSeries = series;
   // chart.cursor.xAxis = dateAxis;
   
@@ -131,15 +126,6 @@ var main = function(response, chart){
   chart.scrollbarX = new am4core.Scrollbar();
 
   chart.scrollbarY = new am4core.Scrollbar();
-
-
-
-
-
-
-
-
-
 
 };
 
@@ -158,7 +144,7 @@ var jsonData = $.ajax({
 
 });
 
-var search = $("#click").button().click(function(){
+$("#click").click(function(){
 
   var catalogId = $('input[name=catalogId]').val();
 
@@ -178,4 +164,5 @@ var search = $("#click").button().click(function(){
     }
   
   });
+
 });

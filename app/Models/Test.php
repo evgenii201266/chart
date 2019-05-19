@@ -11,4 +11,6 @@ class Test extends Model
     use TimeFormatHelper;
     
     protected $table = 'test';
+
+    public $timestamps = false;
 }
